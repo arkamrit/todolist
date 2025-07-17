@@ -13,8 +13,8 @@ body {
   background-color: #ffffff;
   padding: 40px 30px;
   margin: 50px auto;
-  width: 90%; /* Use most of screen width */
-  max-width: 900px; /* Increase from 600px to 900px */
+  width: 80%; /* Use most of screen width */
+  max-width: 800px; /* Increase from 600px to 900px */
   border-radius: 12px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
