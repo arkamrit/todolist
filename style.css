@@ -32,7 +32,7 @@ h2 {
   margin: 10px 0 20px;
 }
 
-/* Input bar and button */
+/* Input and Add Button */
 input[type="text"] {
   width: 65%;
   padding: 10px;
@@ -67,93 +67,81 @@ ul#taskList {
   text-align: left;
 }
 
-/* Individual Task Item */
+/* Task Item */
 li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #f8f8f8;
-  padding: 12px 45px 12px 12px;
+  padding: 10px;
   margin-top: 10px;
-  position: relative;
   border-radius: 6px;
   font-size: 16px;
   transition: background-color 0.2s;
+  flex-wrap: wrap;
 }
 
-/* Delete Button inside li */
-li button {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #dc3545;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 5px 10px;
-  cursor: pointer;
+/* Task Content (left side) */
+.task-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 60%;
+}
+
+/* Task Actions (right side) */
+.task-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+/* Individual action buttons */
+.task-actions button {
+  padding: 6px 12px;
   font-size: 14px;
-  transition: background-color 0.3s ease;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
 }
 
-li button:hover {
-  background-color: #c82333;
+.task-actions button:first-child {
+  background-color: #ffc107; /* Edit */
+  color: black;
 }
 
-/* Completed Task Style */
+.task-actions button:last-child {
+  background-color: red; /* Delete */
+  color: white;
+}
+
+/* Completed Task */
 .completed {
   text-decoration: line-through;
   color: gray;
   background-color: #e2e3e5;
 }
-li button {
-  position: static;
-  margin-left: 8px;
-  padding: 5px 10px;
-  font-size: 14px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
 
-li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #f8f8f8;
-  padding: 10px;
-  margin-top: 10px;
-  position: relative;
-  border-radius: 5px;
-}
+/* Responsive Design */
+@media (max-width: 600px) {
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-/* Flex container for left side (checkbox + task text) */
-.task-content {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+  .task-content {
+    min-width: 100%;
+  }
 
-/* Flex container for right side (edit + delete buttons) */
-.task-actions {
-  display: flex;
-  gap: 10px;
-}
+  .task-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
 
-/* Style individual buttons */
-.task-actions button {
-  padding: 5px 10px;
-  border: none;
-  border-radius: 4px;
-  font-size: 14px;
-  cursor: pointer;
+  input[type="text"], button {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 16px;
+  }
 }
-
-.task-actions button:first-child {
-  background-color: #ffc107; /* Edit - yellow */
-  color: black;
-}
-
-.task-actions button:last-child {
-  background-color: red;     /* Delete - red */
-  color: white;
-}
-
